@@ -3,6 +3,7 @@
     "mappings": "",
     "sources": [
         "style.scss",
+        "partials/_setup.scss",
         "partials/_global.scss",
         "partials/_header.scss",
         "partials/_main.scss",
