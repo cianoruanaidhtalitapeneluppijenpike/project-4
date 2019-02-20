@@ -2,13 +2,25 @@
     //Pseudo code idea - Cian
     // Pseudo code for MVP
     //FIRST CREATE APP OBJECT
-    // For Namespacing
+        // For Namespacing
+    const app = {};
+    app.apiKey = 'c29c1aea1bc9d6b87f4f2175fcbf13c4';
+    app.apiId = '8423c766';
+    app.apiurl = 'http://api.yummly.com/v1/api/recipes';
+     
+    // document ready function with init() function called within
+    $(function(){
+        app.init();
+    });
 
+    app.init = function(){
+        console.log('this is init');
+    };
     // declare initial object variables
     // api keys
     // api urls
 
-    // document ready function with init() function called within
+   
 
     // init function declaration
         // event listener on button to call random recipe
