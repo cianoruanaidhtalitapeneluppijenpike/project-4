@@ -1,14 +1,8 @@
 //PSEUDO CODE
-//1. FIRST CREATE APP OBJECT
-//      - For Namespacing
-//2. 
-//
-
-
-// Pseudo code idea - Cian
+    //Pseudo code idea - Cian
     // Pseudo code for MVP
-
-    // declare app object
+    //FIRST CREATE APP OBJECT
+    // For Namespacing
 
     // declare initial object variables
     // api keys
@@ -24,3 +18,11 @@
         // ajax call to query Yummly api
         // randomly select recipe
         // chain .then() function to show response response on our site
+
+
+// STRETCH GOALS
+    //PICK A RECIPE BASED ON INGREDIENTS IN FRIDGE
+    //PICK FOOD BASED ON COOKTIME ?
+    //WEATHER API PICKS A FOOD BASED ON WEATHER
+    //WEATHER API ASLO HAS THE TIME SO ADD IN TIME TO CRITERIA FOR FOOD CHOICE
+    //OPTION FOR MOOD MUSIC TO PLAY WHILE COOKING FROM SPOTIFY API
