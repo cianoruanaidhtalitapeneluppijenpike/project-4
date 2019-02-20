@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "style.scss",
+        "partials/_global.scss",
+        "partials/_header.scss",
+        "partials/_main.scss",
+        "partials/_footer.scss",
+        "partials/_buttons.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

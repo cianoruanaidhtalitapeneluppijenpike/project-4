@@ -22,5 +22,5 @@
 
     // recipe function
         // ajax call to query Yummly api
-        // randomly select reciper
+        // randomly select recipe
         // chain .then() function to show response response on our site
