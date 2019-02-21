@@ -7,7 +7,6 @@
     app.apiKey = 'c29c1aea1bc9d6b87f4f2175fcbf13c4';
     app.apiId = '8423c766';
     app.apiUrl = 'http://api.yummly.com/v1/api/recipes';
-    let query = "chicken"
      
     // document ready function with init() function called within
     $(function(){
@@ -17,9 +16,17 @@
     // init function declaration
     app.init = function(){
        // declare initial object variables
-        $('#search-btn').on('click', function(){
-            console.log("clicked!!"); 
-            app.getRecipe(query);           
+        $('.user-input').on('submit', function(e){
+            e.preventDefault();
+            query = $('#search-recipe').val();
+            queryType = typeof(query);
+            if (query === ''){
+                console.log('ENTER A INGREDIENT');
+                // Add eror handeling message - no input
+            } else {
+                app.getRecipe(query);
+                $('#search-recipe').val('');           
+            }
         });
         // create event listener on "show recipes" button to call .getRecipte() function
 
@@ -46,13 +53,20 @@
             },
 
         }).then(function(results){
-            let responseArray = results.matches;
-            let recipeArray = [];
-            for(i = 0; i < 3; i++){
-                let index = Math.floor(Math.random() * 100);
-                recipeArray.push(responseArray[index]);           
+            $('.gallery').empty();
+            if(results.matches.length === 0) {
+                // Add eror handeling message - no results
+                console.log("THERE ARE NO RESULTS");
+            } else {
+                console.log(results);
+                let responseArray = results.matches;
+                let recipeArray = [];
+                for(i = 0; i < 3; i++){
+                    let index = Math.floor(Math.random() * 100);
+                    recipeArray.push(responseArray[index]);           
+                }
+                app.displayRecipes(recipeArray);
             }
-            app.displayRecipes(recipeArray);
         });
     }
     
@@ -61,13 +75,15 @@
         array.forEach(function(item) {
             const title = item.recipeName;
             const image = item.imageUrlsBySize;
+            console.log(image);
             // api returns 90px x 90px image
             // manipulate url to return a larger (700px x 700px) image than supplied by api
             const bigImage = image[90].slice(0, image[90].length -4) + "700-c";
             const ingredients = item.ingredients;
             const time = item.totalTimeInSeconds;
 
-            $('.gallery').append(`<h2>${title}</h2>`).append(`<img src="${bigImage}" alt="${title}">`);
+            $('.gallery')
+                .append(`<div class="photo-box"><h2>${title}</h2><img src="${bigImage}" alt="${title}"></div>`);
         });
     
     
