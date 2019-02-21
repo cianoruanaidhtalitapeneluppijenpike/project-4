@@ -39,8 +39,7 @@
             let recipeArray = [];
             for(i = 0; i < 3; i++){
                 let index = Math.floor(Math.random() * 100);
-                recipeArray.push(responseArray[index]);
-                
+                recipeArray.push(responseArray[index]);           
             }
             console.log(recipeArray);     
         })
