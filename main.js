@@ -12,6 +12,8 @@
     // document ready function with init() function called within
     $(function(){
         app.init();
+
+        // create event listener on "show recipes" button to call .getRecipte() function
     });
 
     // init function declaration
@@ -19,6 +21,7 @@
        // declare initial object variables
         app.getRecipe(query);
     };
+
     // recipe function
             // ajax call to query Yummly api
             // randomly select recipe
@@ -36,6 +39,7 @@
                 format:'json',
                 q: query,
                 maxResult: 100,
+                requirePictures: true
             },
 
         }).then(function(results){
@@ -54,11 +58,13 @@
         array.forEach(function(item) {
             const title = item.recipeName;
             const image = item.imageUrlsBySize;
-            console.log(image[90]);
+            // api returns 90px x 90px image
+            // manipulate url to return a larger (700px x 700px) image than supplied by api
+            const bigImage = image[90].slice(0, image[90].length -4) + "700-c";
             const ingredients = item.ingredients;
             const time = item.totalTimeInSeconds;
 
-            $('.gallery').append(`<h2>${title}</h2>`).append(`<img src="${image[90]}" alt="${title}">`);
+            $('.gallery').append(`<h2>${title}</h2>`).append(`<img src="${bigImage}" alt="${title}">`);
         });
     
     
