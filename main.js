@@ -14,11 +14,15 @@
         app.init();
     });
 
+    // init function declaration
     app.init = function(){
        // declare initial object variables
         app.getRecipe(query);
     };
-
+    // recipe function
+            // ajax call to query Yummly api
+            // randomly select recipe
+            // chain .then() function to show response response on our site
     app.getRecipe = function(query){
         $.ajax({
             // api urls
@@ -42,18 +46,33 @@
                 recipeArray.push(responseArray[index]);
                 
             }
-            console.log(recipeArray);     
-        })
+            app.displayRecipes(recipeArray);
+        });
     }
     
-    // init function declaration
-        // event listener on button to call random recipe
+    // print results in the dom
+    app.displayRecipes = function(array){
+        array.forEach(function(item) {
+            const title = item.recipeName;
+            const image = item.imageUrlsBySize;
+            console.log(image[90]);
+            const ingredients = item.ingredients;
+            const time = item.totalTimeInSeconds;
+
+            $('.gallery').append(`<h2>${title}</h2>`).append(`<img src="${image[90]}" alt="${title}">`);
+        });
+    
+    
+        
+    }
+    
+    
+        
+    
+    // event listener on button to call random recipe
         // listener calls recipe function
 
-    // recipe function
-        // ajax call to query Yummly api
-        // randomly select recipe
-        // chain .then() function to show response response on our site
+    
 
 
 // STRETCH GOALS
