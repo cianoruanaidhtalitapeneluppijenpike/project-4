@@ -12,14 +12,17 @@
     // document ready function with init() function called within
     $(function(){
         app.init();
-
-        // create event listener on "show recipes" button to call .getRecipte() function
     });
 
     // init function declaration
     app.init = function(){
        // declare initial object variables
-        app.getRecipe(query);
+        $('#search-btn').on('click', function(){
+            console.log("clicked!!"); 
+            app.getRecipe(query);           
+        });
+        // create event listener on "show recipes" button to call .getRecipte() function
+
     };
 
     // recipe function
