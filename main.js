@@ -7,6 +7,7 @@
     app.apiKey = 'c29c1aea1bc9d6b87f4f2175fcbf13c4';
     app.apiId = '8423c766';
     app.apiUrl = 'http://api.yummly.com/v1/api/recipes';
+    
     app.recipesArray = [];
     // document ready function with init() function called within
     $(function(){
@@ -103,7 +104,10 @@
     app.displaySelected = function(selectedRecipe){
         $('a').on('click', function () {
             const i = $(this).attr(`id`);
-            console.log($(this).attr(`id`));
+            console.log(app.recipesArray);
+            let link = app.selectedRecipeCall(app.recipesArray[i].recipeid);
+            console.log(app.recipesArray[i].recipeid)
+            // console.log($(this).attr(`id`));
             $('.recipe-title').append(app.recipesArray[i].title);
             $('.selected-image').attr('src', app.recipesArray[i].image);
             app.recipesArray[i].ingredients.forEach(function(item){
@@ -112,8 +116,33 @@
            
             $('.cooktime').append(app.recipesArray[i].time / 60 + " minutes");
             // console.log(app.recipesArray[i].recipeid);
+            $('.chosen-photo').append(`<button href=${externalLink} type='submit'>Check the instructions</button>`);
+
+            $('button').on('click', function () {
+                // e.preventDefault();
+                console.log('clicked')
+            });
         });
     };
+
+    app.selectedRecipeCall = function(url){
+        $.ajax({
+            url: `http://api.yummly.com/v1/api/recipe/${url}`,
+            method:'GET',
+            dataType:'json',
+            data: {
+             // api keys
+                _app_key: app.apiKey,
+                _app_id: app.apiId,
+                format:'json',
+            }
+        }).then(function(result){
+            let externalLink = result.source.sourceRecipeUrl;
+            return externalLink;
+        });
+    };
+
+
 
 
 // STRETCH GOALS
