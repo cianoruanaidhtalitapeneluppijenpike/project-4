@@ -1,155 +1,123 @@
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
-  display: block;
-}
+  display: block; }
 
 audio, canvas, video {
-  display: inline-block;
-}
+  display: inline-block; }
 
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
 
 [hidden] {
-  display: none;
-}
+  display: none; }
 
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
-}
+  -ms-text-size-adjust: 100%; }
 
 a:focus {
-  outline: thin dotted;
-}
+  outline: thin dotted; }
 
 a:active, a:hover {
-  outline: 0;
-}
+  outline: 0; }
 
 h1 {
-  font-size: 2em;
-}
+  font-size: 2em; }
 
 abbr[title] {
-  border-bottom: 1px dotted;
-}
+  border-bottom: 1px dotted; }
 
 b, strong {
-  font-weight: 700;
-}
+  font-weight: 700; }
 
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
 
 mark {
   background: #ff0;
-  color: #000;
-}
+  color: #000; }
 
 code, kbd, pre, samp {
   font-family: monospace, serif;
-  font-size: 1em;
-}
+  font-size: 1em; }
 
 pre {
   white-space: pre-wrap;
-  word-wrap: break-word;
-}
+  word-wrap: break-word; }
 
 q {
-  quotes: \201C \201D \2018 \2019;
-}
+  quotes: \201C \201D \2018 \2019; }
 
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
 sub, sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 sup {
-  top: -.5em;
-}
+  top: -.5em; }
 
 sub {
-  bottom: -.25em;
-}
+  bottom: -.25em; }
 
 img {
-  border: 0;
-}
+  border: 0; }
 
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 fieldset {
   border: 1px solid silver;
   margin: 0 2px;
-  padding: .35em .625em .75em;
-}
+  padding: .35em .625em .75em; }
 
 button, input, select, textarea {
   font-family: inherit;
   font-size: 100%;
-  margin: 0;
-}
+  margin: 0; }
 
 button, input {
-  line-height: normal;
-}
+  line-height: normal; }
 
 button, html input[type=button], input[type=reset], input[type=submit] {
   -webkit-appearance: button;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 button[disabled], input[disabled] {
-  cursor: default;
-}
+  cursor: default; }
 
 input[type=checkbox], input[type=radio] {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  padding: 0;
-}
+  box-sizing: border-box;
+  padding: 0; }
 
 input[type=search] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-}
+  box-sizing: content-box; }
 
 input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  -webkit-appearance: none; }
 
 textarea {
   overflow: auto;
-  vertical-align: top;
-}
+  vertical-align: top; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 body, figure {
-  margin: 0;
-}
+  margin: 0; }
 
 legend, button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 .clearfix:after {
   visibility: hidden;
@@ -157,17 +125,15 @@ legend, button::-moz-focus-inner, input::-moz-focus-inner {
   font-size: 0;
   content: '';
   clear: both;
-  height: 0;
-}
+  height: 0; }
 
 * {
+  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 html {
-  font-size: 125%;
-}
+  font-size: 125%; }
 
 body {
   background-color: #DAE5D9;
@@ -176,15 +142,20 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
+  -ms-flex-direction: column;
+  flex-direction: column; }
 
 .wrapper {
   width: 80%;
   max-width: 1024px;
-  margin: 0 auto;
-}
+  margin: 0 auto; }
+
+img {
+  width: 100%;
+  display: block; }
+
+a {
+  text-decoration: none; }
 
 header {
   background-image: url(../assets/brooke-lark-230140-unsplash.jpg);
@@ -197,56 +168,57 @@ header {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -ms-flex-line-pack: distribute;
-      align-content: space-around;
+  align-content: space-around;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-}
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center; }
 
 h1 {
   color: #1F1C1D;
-  font-family: 'Domine', serif;
-  font-size: 3rem;
-  margin-top: 0;
-}
+  font-family: 'Staatliches', cursive;
+  font-size: 3.8rem;
+  text-transform: uppercase;
+  margin-top: 0; }
 
 .display-none {
-  display: none;
-}
+  display: none; }
+
+h2 {
+  color: #1F1C1D;
+  font-family: 'Staatliches', cursive;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  text-align: center; }
+
+#recipe-clicked {
+  background: #F4F7F8; }
 
 footer {
   background-color: #1F1C1D;
-  color: #F4F7F8;
-}
-
-footer .wrapper p {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.8rem;
-  margin: 0;
-  padding: 10px 0;
-  text-align: center;
-}
+  color: #F4F7F8; }
+  footer .wrapper p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center; }
 
 #search-btn,
 #search-recipe {
-  margin: 0 auto;
-}
+  margin: 0 auto; }
 
-#search-recipe {
-  width: 250px;
-  padding: 8px;
-}
-
-#search-btn {
+#search-btn, #search-recipe {
   background-color: #C74D58;
   border: 2px solid #C74D58;
   padding: 10px;
   margin-top: 4%;
   border-radius: 5px;
-  color: #F4F7F8;
-}
-/*# sourceMappingURL=style.css.map */
+  color: #F4F7F8; }
+
+#search-recipe {
+  background-color: #F4F7F8;
+  color: #1F1C1D; }

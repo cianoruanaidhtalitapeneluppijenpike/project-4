@@ -4,10 +4,20 @@ $background-section-color: #DAE5D9;
 $main-detail-color: #C74D58;
 $secondary-detail-color: #9BBA99;
 
+
+
+// font-family: 'Baloo Bhaina', cursive;
+
+// font-family: 'Staatliches', cursive;
+
+
+
 // FONT STYLES FOR MAIN TITLE
 @mixin title($size-value) {
-    font-family: 'Domine', serif;
+    // font-family: 'Domine', serif;
+    font-family: 'Staatliches', cursive;
     font-size: $size-value;
+    text-transform: uppercase;
 }
 
 //FONT STYLES FOR BODY TEXT
@@ -30,4 +40,13 @@ body {
     width: 80%;
     max-width: 1024px;
     margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
 }
