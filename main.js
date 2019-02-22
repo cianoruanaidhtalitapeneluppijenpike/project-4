@@ -6,7 +6,7 @@
     const app = {};
     app.apiKey = 'c29c1aea1bc9d6b87f4f2175fcbf13c4';
     app.apiId = '8423c766';
-    app.apiUrl = 'http://api.yummly.com/v1/api/recipes';
+    app.apiUrl = 'https://api.yummly.com/v1/api/recipes';
     
     app.recipesArray = [];
     // document ready function with init() function called within
@@ -120,7 +120,7 @@
 
     app.selectedRecipeCall = function(url){
         $.ajax({
-            url: `http://api.yummly.com/v1/api/recipe/${url}`,
+            url: `https://api.yummly.com/v1/api/recipe/${url}`,
             method:'GET',
             dataType:'json',
             data: {
