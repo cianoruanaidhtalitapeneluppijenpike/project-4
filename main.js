@@ -104,24 +104,17 @@
     app.displaySelected = function(selectedRecipe){
         $('a').on('click', function () {
             const i = $(this).attr(`id`);
-            console.log(app.recipesArray);
-            let link = app.selectedRecipeCall(app.recipesArray[i].recipeid);
-            console.log(app.recipesArray[i].recipeid)
-            // console.log($(this).attr(`id`));
+
             $('.recipe-title').append(app.recipesArray[i].title);
             $('.selected-image').attr('src', app.recipesArray[i].image);
+
             app.recipesArray[i].ingredients.forEach(function(item){
                 $('.ingredient-list').append(`<li>${item}</li>`);
             });
            
             $('.cooktime').append(app.recipesArray[i].time / 60 + " minutes");
-            // console.log(app.recipesArray[i].recipeid);
-            $('.chosen-photo').append(`<button href=${externalLink} type='submit'>Check the instructions</button>`);
+            app.selectedRecipeCall(app.recipesArray[i].recipeid);
 
-            $('button').on('click', function () {
-                // e.preventDefault();
-                console.log('clicked')
-            });
         });
     };
 
@@ -138,7 +131,7 @@
             }
         }).then(function(result){
             let externalLink = result.source.sourceRecipeUrl;
-            return externalLink;
+            $('.chosen-photo').append(`<a href="${externalLink}" target="_blank"><button>Check the instructions</button></a>`);
         });
     };
 
