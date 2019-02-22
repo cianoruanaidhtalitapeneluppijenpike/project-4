@@ -1,0 +1,33 @@
+$darkest-color: #1F1C1D;
+$lightest-color: #F4F7F8;
+$background-section-color: #DAE5D9;
+$main-detail-color: #C74D58;
+$secondary-detail-color: #9BBA99;
+
+// FONT STYLES FOR MAIN TITLE
+@mixin title($size-value) {
+    font-family: 'Domine', serif;
+    font-size: $size-value;
+}
+
+//FONT STYLES FOR BODY TEXT
+@mixin body-text($size-value) {
+    font-family: 'Roboto', sans-serif;
+    font-size: $size-value;
+}
+
+html {
+    font-size: 125%;
+}
+
+body {
+    background-color: $background-section-color;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    width: 80%;
+    max-width: 1024px;
+    margin: 0 auto;
+}

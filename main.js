@@ -6,7 +6,7 @@
     const app = {};
     app.apiKey = 'c29c1aea1bc9d6b87f4f2175fcbf13c4';
     app.apiId = '8423c766';
-    app.apiUrl = 'http://api.yummly.com/v1/api/recipes';
+    app.apiUrl = 'https://api.yummly.com/v1/api/recipes';
     
     app.recipesArray = [];
     // document ready function with init() function called within
@@ -23,11 +23,12 @@
             query = $('#search-recipe').val();
             queryType = typeof(query);
             if (query === ''){
-                console.log('ENTER A INGREDIENT');
-                // Add eror handeling message - no input
+                alert('Please, enter an ingredient.');
+                // Add error handling message - no input
             } else {
                 app.getRecipe(query);
-                $('#search-recipe').val('');           
+                $('#search-recipe').val('');
+                $('main').removeClass('display-none');           
             }
         });
         
@@ -57,8 +58,8 @@
         }).then(function(results){
             $('.gallery').empty();
             if(results.matches.length === 0) {
-                // Add eror handeling message - no results
-                console.log("THERE ARE NO RESULTS");
+                // Add error handling message - no results
+                alert("Sorry, there's no results for your search. Try another ingredient.");
             } else {
                 let responseArray = results.matches;
                 let recipeArray = [];
@@ -68,6 +69,8 @@
                 }
                 app.displayRecipes(recipeArray);
             }
+        }).fail(function(error){
+            alert("Server error. Please, try again later.")
         });
     }
     
@@ -120,7 +123,7 @@
 
     app.selectedRecipeCall = function(url){
         $.ajax({
-            url: `http://api.yummly.com/v1/api/recipe/${url}`,
+            url: `https://api.yummly.com/v1/api/recipe/${url}`,
             method:'GET',
             dataType:'json',
             data: {
