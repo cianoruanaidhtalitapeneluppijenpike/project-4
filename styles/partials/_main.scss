@@ -6,9 +6,15 @@ h2 {
     color: $darkest-color;
     @include title(1.5rem);
     text-align: center;
-    // margin-top: 0;
 }
 
 #recipe-clicked {
     background: $lightest-color;
+}
+
+// GALLERY STYLES
+
+.click-instruction {
+    @include body-text(1rem);
+    text-align: center;
 }
