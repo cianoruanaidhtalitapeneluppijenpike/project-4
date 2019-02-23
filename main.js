@@ -88,7 +88,7 @@
             const time = item.totalTimeInSeconds;
             const recipeid =  item.id;
             $('.gallery')
-                .append(`<a id="${i}" href="#recipe-clicked"><div class="photo-box"><h2>${title}</h2><img src="${bigImage}" alt="${title}"></div></a>`);
+                .append(`<div class="photo-box"><a id="${i}" href="#recipe-clicked"><div class="gallery-title"><h2>${title}</h2></div><img src="${bigImage}" alt="${title}"></a></div>`);
 
             const recipe = {
                 title:title,
