@@ -25,6 +25,7 @@
     </header>
     <main class="display-none">
         <div class="wrapper">
+            <h2 class="time-of-day"></h2>
             
             <!-- PHOTO GALLERY WITH 3 RECIPE PHOTOS -->
             <div class="gallery">
@@ -33,19 +34,22 @@
 
         </div>
 
-        <div id="recipe-clicked">
-            <!-- CONTENT SELECTED BY USER IN THE GALLERY WILL APPEAR HERE -->
-            <div class="photo-box chosen-photo">
+        <section id="recipe-clicked">
+            <div class="wrapper display-none">
+                <!-- CONTENT SELECTED BY USER IN THE GALLERY WILL APPEAR HERE -->
                 <h2 class="recipe-title"></h2>
-                <img class="selected-image" src="" alt="">
-                <ul class="ingredient-list">
-
-                </ul>
-                <h2 class="cooktime"></h2>
-                <!-- <img src="https://picsum.photos/700/700/?random" alt=""> PLACE HOLDER -->
-                <!-- SAME IMH AND H2 FROM GALLERY/PHOTO-BOX -->
+                <div class="photo-box chosen-photo">
+                    <img class="selected-image" src="" alt="">
+                    <div class="imgredient-info">
+                        <h2 class="">Ingredients</h2>
+                        <ul class="ingredient-list">
+                        </ul>
+                        <h2 class="">Cook time</h2>
+                        <p class="cooktime"></p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
         
     </main>

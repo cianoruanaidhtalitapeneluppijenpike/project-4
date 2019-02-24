@@ -32,6 +32,7 @@
             }
         });
         
+        app.timeOfDay();
         // create event listener on "show recipes" button to call .getRecipte() function
     };
 
@@ -40,6 +41,10 @@
             // randomly select recipe
             // chain .then() function to show response response on our site
     app.getRecipe = function(query){
+        // adding select meal based on time of day
+        mealType = app.timeOfDay();
+        course = `course^course-${mealType}`;
+        console.log(mealType);
         $.ajax({
             // api urls
             url: app.apiUrl,
@@ -51,6 +56,7 @@
                 _app_id: app.apiId,
                 format:'json',
                 q: query,
+                allowedCourse: course,
                 maxResult: 100,
                 requirePictures: true
             },
@@ -118,6 +124,10 @@
             $('.cooktime').append(app.recipesArray[i].time / 60 + " minutes");
             app.selectedRecipeCall(app.recipesArray[i].recipeid);
 
+            $('.recipe-clicked h2').removeClass('display-none'); 
+            $('.recipe-clicked').removeClass('display-none');  
+            $('.wrapper').removeClass('display-none');  
+
         });
     };
 
@@ -134,9 +144,39 @@
             }
         }).then(function(result){
             let externalLink = result.source.sourceRecipeUrl;
-            $('.chosen-photo').append(`<a href="${externalLink}" target="_blank"><button>Check the instructions</button></a>`);
+            $('.imgredient-info').append(`<a href="${externalLink}" target="_blank"><button>Check the instructions</button></a>`);
         });
     };
+
+    // NEW DAY INFO FEATURE
+    app.timeOfDay = function(){
+        console.log("time of day");
+        let date = new Date();
+        let hour = date.getHours();
+        console.log(hour);
+        if (5 < hour && hour <= 11) {
+            $('.time-of-day').text("It's breakfast time");
+            console.log("it's breakfast time");
+            return "Breakfast";
+        } else if (11 < hour && hour <= 15) {
+            $('.time-of-day').text("It's lunch time");
+            console.log("it's lunch time");
+            return "Lunch";
+        } else if (15 < hour && hour <= 17) {
+            $('.time-of-day').text("It's time for a snack");
+            console.log("it's time for a late afternoon snack");
+            return "Side Dishes";
+        } else if (17 < hour && hour <= 20) {
+            $('.time-of-day').text("It's dinner time");
+            console.log("it's dinner time");      
+            return "Main Dishes";      
+        } else if (20 < hour || hour <= 5) {
+            $('.time-of-day').text("It's time for a snack");
+            console.log("it's time for a late night snack");
+            return "Snacks";
+        }
+
+    }
 
 
 

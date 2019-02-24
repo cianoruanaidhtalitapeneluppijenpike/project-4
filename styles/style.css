@@ -195,7 +195,64 @@ h2 {
   text-align: center; }
 
 #recipe-clicked {
+  padding: 0.1px;
   background: #F4F7F8; }
+  #recipe-clicked .wrapper {
+    padding-top: 40px; }
+  #recipe-clicked .chosen-photo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  #recipe-clicked h2 {
+    font-size: 2.5rem; }
+  #recipe-clicked p {
+    text-align: center; }
+  #recipe-clicked img {
+    width: auto;
+    -ms-flex-preferred-size: 400px;
+    flex-basis: 400px;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    margin: 0 auto;
+    max-height: 400px;
+    padding-bottom: 40px; }
+  #recipe-clicked .imgredient-info {
+    -ms-flex-preferred-size: 400px;
+    flex-basis: 400px;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    -ms-flex-negative: 1;
+    flex-shrink: 1;
+    margin: 0 auto; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  text-transform: capitalize;
+  text-align: center; }
+
+li {
+  margin: 5px 0; }
+
+a {
+  display: block;
+  margin: 40px auto;
+  text-align: center; }
+
+@media only screen and (min-width: 1002px) {
+  .imgredient-info h2:first-of-type {
+    margin-top: 0;
+    line-height: 80%; } }
 
 footer {
   background-color: #1F1C1D;
@@ -222,3 +279,17 @@ footer {
 #search-recipe {
   background-color: #F4F7F8;
   color: #1F1C1D; }
+
+button {
+  padding: 20px;
+  border-radius: 10px;
+  background: #9BBA99;
+  color: #F4F7F8;
+  border: none;
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase; }
+
+button:hover {
+  background-color: #C74D58; }

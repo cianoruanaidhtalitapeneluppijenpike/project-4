@@ -2,13 +2,67 @@
     display: none;
 }
 
+
 h2 {
     color: $darkest-color;
     @include title(1.5rem);
     text-align: center;
-    // margin-top: 0;
 }
 
 #recipe-clicked {
+    .wrapper {
+        padding-top: 40px;
+    }
+    .chosen-photo {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    padding: 0.1px;
     background: $lightest-color;
+    h2 {
+        font-size: 2.5rem;
+    }
+    p {
+        text-align: center;
+    }
+    img {
+        width: auto;
+        flex-basis: 400px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        margin: 0 auto;
+        max-height: 400px;
+        padding-bottom: 40px;
+    }
+    .imgredient-info {
+        flex-basis: 400px;
+        flex-grow: 0;
+        flex-shrink: 1;
+        margin: 0 auto;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+li {
+    margin: 5px 0;
+}
+
+a {
+    display: block;
+    margin: 40px auto;
+    text-align: center;
+}
+
+@media only screen and (min-width: 1002px)  {
+    .imgredient-info h2:first-of-type{
+        margin-top: 0;
+        line-height: 80%;
+    }
 }
