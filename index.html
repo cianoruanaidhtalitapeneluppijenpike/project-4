@@ -14,15 +14,15 @@
             <h1>Hungry?</h1>
         </div>
         <!-- INPUTS BY USER (INGREDIENT SEARCH AND SUBMIT) GOES HERE -->
-        <form class="user-input" action="">
+        <form class="user-input" action="" >
             <input type="text" name="search" id="search-recipe" placeholder="I want to eat...">
             <label for="search-recipe"></label>
 
-            <input type="submit" id="search-btn" value="Show recipes">
+            <input type="submit" id="search-btn" value="Show recipes" onclick="window.location.href='#main-content'">
             <label for="search-btn"></label>
         </form>   
     </header>
-    <main class="display-none">
+    <main id="main-content" class="display-none">
         <div class="wrapper">
             <h2>Click on your favorite recipe:</h2>
             

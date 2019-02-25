@@ -28,7 +28,7 @@
             } else {
                 app.getRecipe(query);
                 $('#search-recipe').val('');
-                $('main').removeClass('display-none');           
+                $('main').removeClass('display-none');       
             }
             $('#recipe-clicked').hide();
         });
