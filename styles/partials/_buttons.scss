@@ -40,3 +40,31 @@ button:hover {
     background-color: $main-detail-color;
     // color: black;
 }
+
+
+@media (min-width: 480px) {
+    #search-btn, #search-recipe{
+        padding: 17px;
+    }
+    #search-recipe{
+        padding-right: 59px;
+    }
+}
+//IPAD STYLES FOR HEADER
+@media (min-width: 768px) {
+    #search-btn, #search-recipe{
+        padding: 20px;
+    }
+    #search-recipe{
+        padding-right: 100px;
+    }
+}
+
+@media(min-width:940px){
+    #search-btn, #search-recipe{
+        padding:23px;
+    }
+    #search-recipe{
+        padding-right:130px;
+    }
+};
