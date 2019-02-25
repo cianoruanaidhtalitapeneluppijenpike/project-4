@@ -14,7 +14,6 @@ header{
 
 h1 {
     color: $darkest-color;
-    // @include title(3rem);
     @include title(3.8rem);
     margin-top: 0;
     margin-bottom:0;

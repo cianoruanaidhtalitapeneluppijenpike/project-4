@@ -27,7 +27,6 @@ h2 {
     img {
         flex-basis: 400px;
         flex-grow: 0;
-        // max-width: 400px;
         max-height: 400px;
     }
 }
@@ -37,12 +36,6 @@ h2 {
 }
 
 // GALLERY STYLES
-
-.click-instruction {
-    @include body-text(1rem);
-    text-align: center;
-    color: $darkest-color;
-}
 
 .gallery {
     display: flex;

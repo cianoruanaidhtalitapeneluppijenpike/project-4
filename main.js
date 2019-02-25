@@ -45,7 +45,6 @@
         // adding select meal based on time of day
         mealType = app.timeOfDay();
         course = `course^course-${mealType}`;
-        console.log(mealType);
         $.ajax({
             // api urls
             url: app.apiUrl,
@@ -151,31 +150,19 @@
         });
     };
 
-    // NEW DAY INFO FEATURE
+    //FUNCTION TO DETERMINE TIME OF DAY TO HELP RECOMMEND RECIPE
     app.timeOfDay = function(){
-        console.log("time of day");
         let date = new Date();
         let hour = date.getHours();
-        console.log(hour);
         if (5 < hour && hour <= 11) {
-            $('.time-of-day').text("It's breakfast time");
-            console.log("it's breakfast time");
             return "Breakfast";
         } else if (11 < hour && hour <= 15) {
-            $('.time-of-day').text("It's lunch time");
-            console.log("it's lunch time");
             return "Lunch";
         } else if (15 < hour && hour <= 17) {
-            $('.time-of-day').text("It's time for a snack");
-            console.log("it's time for a late afternoon snack");
             return "Side Dishes";
-        } else if (17 < hour && hour <= 20) {
-            $('.time-of-day').text("It's dinner time");
-            console.log("it's dinner time");      
+        } else if (17 < hour && hour <= 20) {   
             return "Main Dishes";      
         } else if (20 < hour || hour <= 5) {
-            $('.time-of-day').text("It's time for a snack");
-            console.log("it's time for a late night snack");
             return "Snacks";
         }
 

@@ -3,11 +3,6 @@
     margin: 0 auto;
 }
 
-// // #search-recipe {
-// //     width: 250px;
-// //     padding: 8px;
-// }
-
 #search-btn, #search-recipe {
     background-color: $main-detail-color;
     border: 2px solid $main-detail-color;
@@ -20,7 +15,6 @@
 #search-recipe {
     background-color: $lightest-color;
     color: $darkest-color;
-    // display: block;
 }
 
 button {
@@ -29,7 +23,6 @@ button {
     background: $secondary-detail-color;
     color: $lightest-color;
     border: none;
-    // box-shadow: none;
     -webkit-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
     -moz-box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
     box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.2);
@@ -38,7 +31,6 @@ button {
 
 button:hover {
     background-color: $main-detail-color;
-    // color: black;
 }
 
 
