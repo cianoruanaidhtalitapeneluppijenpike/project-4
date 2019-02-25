@@ -188,7 +188,8 @@ h1 {
   font-family: 'Staatliches', cursive;
   font-size: 3.8rem;
   text-transform: uppercase;
-  margin-top: 0; }
+  margin-top: 0;
+  margin-bottom: 0; }
 
 @media (min-width: 400px) {
   h1 {
