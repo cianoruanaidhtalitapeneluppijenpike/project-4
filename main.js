@@ -30,6 +30,7 @@
                 $('#search-recipe').val('');
                 $('main').removeClass('display-none');           
             }
+            $('#recipe-clicked').hide();
         });
         
         app.timeOfDay();
@@ -114,6 +115,7 @@
         $('a').on('click', function () {
             const i = $(this).attr(`id`);
 
+            $('#recipe-clicked').show();
             $('.recipe-title').append(app.recipesArray[i].title);
             $('.selected-image').attr('src', app.recipesArray[i].image);
 
